@@ -11,6 +11,18 @@ import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author iyad jamal
+ *
+ * Prerequisite to make the application run successfully:
+ * root your device
+ *
+ *
+ * description :
+ * this application used to install and uninstall apps on android applications
+ * without any action from user
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,9 +40,14 @@ public class MainActivity extends AppCompatActivity {
         try
         {
             List<String> command = new ArrayList<String>();
-            command.add("su");
+            command.add("su");//
             command.add(";");
+            //to install set the following command
+//            pm install "../../*your application name*.apk"
             command.add("pm install /sdcard/Download/Showbox.apk");
+            //to uninstall set the following command
+//            pm uninstall "package name"
+//            command.add("pm uninstall com.tdo.showbox");
             ProcessBuilder suProcess=new ProcessBuilder(command) ;
             Process pc=suProcess.start();
 
